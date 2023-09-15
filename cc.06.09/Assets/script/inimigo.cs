@@ -32,9 +32,14 @@ public class inimigo : MonoBehaviour
             print("Cheguei ao limite");
             fatorAndar = fatorAndar * -1;
             imagemInimigo.flipX = isSensor;
-
-
         }
+
+        if (collision.gameObject.tag == "florTiro")
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+ 
     }
 
     void OnCollisionEnter2D(Collision2D collisior)

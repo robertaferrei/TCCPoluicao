@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c665f9867f910194890b1b86645a9aa5
+guid: 3fb6a8f8cc8bd5648b1640e171b811a8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,22 +117,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: saco_0
+      name: flor_0
       rect:
         serializedVersion: 2
-        x: 1111
-        y: 375
-        width: 241
-        height: 279
+        x: 595
+        y: 36
+        width: 1112
+        height: 1002
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d12d8717c1c7c9449f65b8ebb3261c7
-      internalID: 1167700518
+      spriteID: 341dca8ef73c09d43a7fab6055f93fdd
+      internalID: 516258186
       vertices: []
       indices: 
       edges: []
@@ -148,8 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      saco_1: 381455578
-      saco_0: 1167700518
+      flor_0: 516258186
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

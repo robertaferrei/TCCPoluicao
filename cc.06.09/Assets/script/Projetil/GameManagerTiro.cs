@@ -6,13 +6,15 @@ public class GameManagerTiro : MonoBehaviour
 {
     public GameObject tiro;
     public Transform posicaoJogo;
+    public GameObject playerFilho;
 
+    private 
 
 
     void Start()
     {
-        
 
+        
 
     }
 
@@ -26,8 +28,24 @@ public class GameManagerTiro : MonoBehaviour
 
     public void Atirar()
     {
+        
+        if(playerFilho.gameObject.transform.localScale.x > 0)
+        {
 
-        GameObject tempo = Instantiate(tiro, posicaoJogo.position, Quaternion.identity);
+            GameObject tempo = Instantiate(tiro, posicaoJogo.position, Quaternion.identity);
+            tempo.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
+
+        }
+        else if(playerFilho.gameObject.transform.localScale.x < 0)
+        {
+           GameObject tempo = Instantiate(tiro, posicaoJogo.position, Quaternion.identity);
+
+           tempo.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-10, 0);
+        }
+
+
+       
+
 
     }
 

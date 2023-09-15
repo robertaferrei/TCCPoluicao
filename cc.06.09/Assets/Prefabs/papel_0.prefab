@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5723650284766756237}
   - component: {fileID: 5723650284766756236}
-  - component: {fileID: 5723650284766756239}
   - component: {fileID: 6231694273129641951}
   - component: {fileID: 6805358963822461009}
+  - component: {fileID: 2344025638120916008}
   m_Layer: 0
   m_Name: papel_0
   m_TagString: inimigo
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5723650284766756238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 63.1986, y: -2.6, z: 12.124468}
+  m_LocalPosition: {x: 62.742428, y: -2.6, z: 12.124468}
   m_LocalScale: {x: 0.13124448, y: 0.15230261, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -76,34 +76,18 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
-  m_Sprite: {fileID: -885317015, guid: 609cbd6064e5e8f41ae439900e5fdd10, type: 3}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 1338113530, guid: 0ed669c54b9632e44ae678da24a5777d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.8, y: 4.610667}
+  m_Size: {x: 5.77, y: 5.94}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5723650284766756239
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5723650284766756238}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.18943493, y: 0}
-  serializedVersion: 2
-  m_Radius: 3.6346328
 --- !u!114 &6231694273129641951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +122,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!58 &2344025638120916008
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5723650284766756238}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.47210452}
+  serializedVersion: 2
+  m_Radius: 2.722706
 --- !u!1 &8051175033074082433
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8051175033074082433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

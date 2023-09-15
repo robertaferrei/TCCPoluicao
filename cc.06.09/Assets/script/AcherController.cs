@@ -55,22 +55,15 @@ public class AcherController : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D collisior)
+     private void OnTriggerEnter2D(Collider2D collision)
     {
-        /*
 
-        if (collisior.gameObject.tag == "inimigo")
+        if (collision.gameObject.tag == "florTiro")
         {
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
-
-
-        */
-
-
-
     }
-
 
 
 

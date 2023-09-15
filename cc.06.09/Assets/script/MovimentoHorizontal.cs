@@ -70,6 +70,9 @@ public class MovimentoHorizontal : MonoBehaviour
     public float forcaTiro;
     public GameObject painelInformacao;
 
+    public float velocidadeTiro;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -98,11 +101,15 @@ public class MovimentoHorizontal : MonoBehaviour
         if (ativarTempo == true)
         {
             tempo += Time.deltaTime;
+
         }
         if (tempo >= 10)
         {
             fechar.interactable = true;
 ;        }
+
+
+   
     }
 
     //Minhas funções

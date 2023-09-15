@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c665f9867f910194890b1b86645a9aa5
+guid: 42561d348d73d4941b1dd70748b8edbb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,22 +117,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: saco_0
+      name: arma _0
       rect:
         serializedVersion: 2
-        x: 1111
-        y: 375
-        width: 241
-        height: 279
+        x: 743
+        y: 240
+        width: 889
+        height: 559
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d12d8717c1c7c9449f65b8ebb3261c7
-      internalID: 1167700518
+      spriteID: 353176e209064f144884efa3baaf3f43
+      internalID: 850498776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arma _1
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 756
+        width: 22
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96d1cf889f754741afe3fbd432dbd3c
+      internalID: 1000668392
       vertices: []
       indices: 
       edges: []
@@ -148,8 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      saco_1: 381455578
-      saco_0: 1167700518
+      arma _0: 850498776
+      arma _1: 1000668392
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

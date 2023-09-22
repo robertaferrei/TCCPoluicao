@@ -18,6 +18,7 @@ TagManager:
   - garrafinhacoletavel
   - contarColetaveis
   - ColetarIntes
+  - Morrer
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Water
   - UI
   - player
-  - 
+  - chao
   - 
   - 
   - 

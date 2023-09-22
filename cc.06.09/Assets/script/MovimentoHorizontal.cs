@@ -31,7 +31,7 @@ public class MovimentoHorizontal : MonoBehaviour
     public const float defaultSpeed = 6;
     public float Speed = defaultSpeed;
 
-    public AudioSource somdePulo;
+  
     public float alturaDoPulo;
     public Rigidbody2D Rigidbody2D;
     public bool estaNoChao;
@@ -50,26 +50,19 @@ public class MovimentoHorizontal : MonoBehaviour
     public int qntVidaAtual;
     public int qntVida;
     public int coins;
-
     public TextMeshProUGUI textoMoedas;
-
     private AudioSource sound;
     public AudioClip somMoeda;
     public AudioClip somPulo;
     public AudioClip atirar;
-
     public TextMeshProUGUI timetext;
     public float tempo;
-
     public GameObject Bandeira;
     public Button fechar;
     private bool ativarTempo;
-
     public GameObject posicaoTiro;
-
     public float forcaTiro;
     public GameObject painelInformacao;
-
     public float velocidadeTiro;
 
 
@@ -78,20 +71,17 @@ public class MovimentoHorizontal : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
-
         spRender = GetComponentInChildren<SpriteRenderer>();
-
         qntVidaAtual = 5;
         qntVida = qntVidaAtual;
         sound = GetComponent<AudioSource>();
-
         fechar.interactable = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Jump();
+       // Jump();
         movimento();
         slide();
         run();
@@ -107,19 +97,15 @@ public class MovimentoHorizontal : MonoBehaviour
         {
             fechar.interactable = true;
 ;        }
-
-
    
     }
 
-    //Minhas funções
-    void Jump()
+    private void FixedUpdate()
     {
-        if (Input.GetButtonDown("Jump") && !isJumping)
-        {
-            rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
-        }
+        estaNoChao = Physics2D.OverlapCircle(verrificadorDeChao.position, raioDeVerificacao, layerDoChao);
     }
+    //Minhas funções
+ 
 
     void slide()
     {
@@ -152,20 +138,7 @@ public class MovimentoHorizontal : MonoBehaviour
 
         transform.Translate(new Vector3(1 * movimentoHorizntal, 1 * movimentoVertical, 0) * velocidade * Time.deltaTime);
     }
-    /*
-    void OnCollisionEnter2D(Collision2D collisior)
-
-    {
-        if (collisior.gameObject.tag == "Chão")
-        {
-            isJumping = true;
-        }
-
-        if (collisior.gameObject.tag == "inimigo")
-        {
-            Destroy(gameObject);
-        }
-    }*/
+   
 
     void OnCollisionExit2D(Collision2D collisior)
     {
@@ -190,12 +163,13 @@ public class MovimentoHorizontal : MonoBehaviour
 
     public void pular()
     {
-        estaNoChao = Physics2D.OverlapCircle(verrificadorDeChao.position, raioDeVerificacao, layerDoChao);
+      
 
-        if (Input.GetKeyDown(KeyCode.Space) && estaNoChao == true)
+        if (estaNoChao == true)
         {
-            Rigidbody2D.velocity = Vector2.up * alturaDoPulo;
-            somdePulo.Play();
+            rig.velocity = Vector2.up * alturaDoPulo;
+            sound.PlayOneShot(somPulo);
+
         }
     }
 
@@ -211,19 +185,7 @@ public class MovimentoHorizontal : MonoBehaviour
     {
         if (col.gameObject.tag == "inimigo")
         {
-            // anim.SetTrigger();
-
-            /*
-            anim.SetTrigger("morrer");
-
-            movimentoHorizntal = 0;
-            movimentoVertical = 0;
-
-            velocidade = 0;
-
-            Destroy(gameObject, 2);
-            */
-
+           
             qntVida -= 1;
 
             if (qntVida <= 4)

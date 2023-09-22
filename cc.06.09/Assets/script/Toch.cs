@@ -12,6 +12,8 @@ public class Toch : MonoBehaviour
 
     public int valorDirecao;
 
+    public Animator anim;
+
 
 
 
@@ -41,10 +43,24 @@ public class Toch : MonoBehaviour
             valorDirecao = 1;
            // player.gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
+
+        if(auxDirecao == 0)
+        {
+            
+            anim.SetInteger("run", 0);
+        }
+        if(auxDirecao != 0)
+        {
+            anim.SetInteger("run", 1);
+        }
+
     }
     public void TochHorizontal(int direcao)
     {
         auxDirecao = direcao;
+
+
+        
     }
 
     public void TouchJump()

@@ -35,12 +35,15 @@ public class GameManagerTiro : MonoBehaviour
             GameObject tempo = Instantiate(tiro, posicaoJogo.position, Quaternion.identity);
             tempo.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
 
+            Destroy(tempo.gameObject, 1f);
+
         }
         else if(playerFilho.gameObject.transform.localScale.x < 0)
         {
            GameObject tempo = Instantiate(tiro, posicaoJogo.position, Quaternion.identity);
 
            tempo.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-10, 0);
+            Destroy(tempo.gameObject, 1f);
         }
 
 

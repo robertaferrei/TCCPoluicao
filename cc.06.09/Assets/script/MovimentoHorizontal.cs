@@ -5,56 +5,41 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
 public class MovimentoHorizontal : MonoBehaviour
 {
     public float velocidade;
-    public float JumpForce;
+    public float jumpForce;
     public bool isJumping;
-    private Rigidbody2D rig;
+    private Rigidbody2D rB;
 
     public GameObject projetil;
     public Transform posicaoProjetil;
 
     private bool abaixar;
     public Animator anim;
-    public float movimentoHorizntal;
-    public float movimentoVertical;
+    public float movimentoHorizontal, movimentoVertical;
 
     public SpriteRenderer spRender;
 
     public GameObject bullet;
     const float lifeTime = 2;
-    public float speed;
 
-    public const float runningSpeed = 9;
-    public const float defaultSpeed = 6;
-    public float Speed = defaultSpeed;
-
+    public const float runningSpeed = 9, defaultSpeed = 6;
+    public float speed = defaultSpeed;
   
     public float alturaDoPulo;
-    public Rigidbody2D Rigidbody2D;
     public bool estaNoChao;
     public Transform verrificadorDeChao;
     public LayerMask layerDoChao;
     public float raioDeVerificacao;
 
+    public Image vida1, vida2, vida3, vida4, vida5;
 
-
-    public Image vida1;
-    public Image vida2;
-    public Image vida3;
-    public Image vida4;
-    public Image vida5;
-
-    public int qntVidaAtual;
-    public int qntVida;
+    public int qntVidaAtual, qntVida;
     public int coins;
     public TextMeshProUGUI textoMoedas;
     private AudioSource sound;
-    public AudioClip somMoeda;
-    public AudioClip somPulo;
-    public AudioClip atirar;
+    public AudioClip somMoeda, somPulo, atirar;
     public TextMeshProUGUI timetext;
     public float tempo;
     public GameObject Bandeira;
@@ -65,11 +50,10 @@ public class MovimentoHorizontal : MonoBehaviour
     public GameObject painelInformacao;
     public float velocidadeTiro;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        rig = GetComponent<Rigidbody2D>();
+        rB = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         spRender = GetComponentInChildren<SpriteRenderer>();
         qntVidaAtual = 5;
@@ -81,12 +65,12 @@ public class MovimentoHorizontal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Jump();
-        movimento();
-        slide();
-        run();
-       // Shoot();
-        tempoMoeda();
+        // Jump();
+        Movimento();
+        Slide();
+        Run();
+        // Shoot();
+        TempoMoeda();
 
         if (ativarTempo == true)
         {
@@ -96,8 +80,7 @@ public class MovimentoHorizontal : MonoBehaviour
         if (tempo >= 10)
         {
             fechar.interactable = true;
-;        }
-   
+;       }
     }
 
     private void FixedUpdate()
@@ -106,8 +89,7 @@ public class MovimentoHorizontal : MonoBehaviour
     }
     //Minhas funções
  
-
-    void slide()
+    void Slide()
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
@@ -119,8 +101,6 @@ public class MovimentoHorizontal : MonoBehaviour
         }
     }
 
-
-
    public void Shoot()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -131,14 +111,13 @@ public class MovimentoHorizontal : MonoBehaviour
         }
     }
 
-    void movimento()
+    void Movimento()
     {
-        movimentoHorizntal = Input.GetAxisRaw("Horizontal");
+        movimentoHorizontal = Input.GetAxisRaw("Horizontal");
         movimentoVertical = Input.GetAxisRaw("Vertical");
 
-        transform.Translate(new Vector3(1 * movimentoHorizntal, 1 * movimentoVertical, 0) * velocidade * Time.deltaTime);
-    }
-   
+        transform.Translate(new Vector3(1 * movimentoHorizontal, 1 * movimentoVertical, 0) * velocidade * Time.deltaTime);
+    }   
 
     void OnCollisionExit2D(Collision2D collisior)
     {
@@ -148,33 +127,29 @@ public class MovimentoHorizontal : MonoBehaviour
         }
     }
 
-    void run()
+    void Run()
     {
         if (Input.GetKey(KeyCode.K))
         {
-            Speed = runningSpeed;
+            speed = runningSpeed;
         }
-        else if (Speed != defaultSpeed)
+        else if (speed != defaultSpeed)
         {
 
-            Speed = defaultSpeed;
+            speed = defaultSpeed;
         }
     }
 
-    public void pular()
+    public void Pular()
     {
-      
-
         if (estaNoChao == true)
         {
-            rig.velocity = Vector2.up * alturaDoPulo;
+            rB.velocity = Vector2.up * alturaDoPulo;
             sound.PlayOneShot(somPulo);
-
         }
     }
 
-
-    public void tempoMoeda()
+    public void TempoMoeda()
     {
         tempo += Time.deltaTime;
         timetext.text = tempo.ToString("0");
@@ -184,8 +159,7 @@ public class MovimentoHorizontal : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "inimigo")
-        {
-           
+        {           
             qntVida -= 1;
 
             if (qntVida <= 4)
@@ -195,8 +169,8 @@ public class MovimentoHorizontal : MonoBehaviour
                 vida3.enabled = true;
                 vida4.enabled = true;
                 vida5.enabled = true;
-
             }
+
             if (qntVida <= 3)
             {
                 vida1.enabled = false;
@@ -204,8 +178,8 @@ public class MovimentoHorizontal : MonoBehaviour
                 vida3.enabled = true;
                 vida4.enabled = true;
                 vida5.enabled = true;
-
             }
+
             if (qntVida <= 2)
             {
                 vida1.enabled = false;
@@ -213,8 +187,8 @@ public class MovimentoHorizontal : MonoBehaviour
                 vida3.enabled = false;
                 vida4.enabled = true;
                 vida5.enabled = true;
-
             }
+
             if (qntVida <= 1)
             {
                 vida1.enabled = false;
@@ -222,8 +196,8 @@ public class MovimentoHorizontal : MonoBehaviour
                 vida3.enabled = false;
                 vida4.enabled = false;
                 vida5.enabled = true;
-
             }
+
             if (qntVida <= 0)
             {
                 vida1.enabled = false;
@@ -234,7 +208,7 @@ public class MovimentoHorizontal : MonoBehaviour
                 qntVida = 0;
                 anim.SetTrigger("morrer");
 
-                movimentoHorizntal = 0;
+                movimentoHorizontal = 0;
                 movimentoVertical = 0;
 
                 velocidade = 0;
@@ -254,15 +228,7 @@ public class MovimentoHorizontal : MonoBehaviour
         {
             Bandeira.SetActive(true);
             ativarTempo = true; 
-        }
-       
-
-
-
-
-
-
-
+        }      
     }
 
     public void fecharPainel()
@@ -277,13 +243,6 @@ public class MovimentoHorizontal : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
-
-
-
-
-
-
-
 } 
 
 

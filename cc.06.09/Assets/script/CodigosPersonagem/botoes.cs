@@ -23,4 +23,6 @@ public class botoes : MonoBehaviour
     {
         painelFechar.SetActive(false);
     }
+
+  
 }

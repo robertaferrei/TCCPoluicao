@@ -19,6 +19,7 @@ TagManager:
   - contarColetaveis
   - ColetarIntes
   - Morrer
+  - coletarPorcao
   layers:
   - Default
   - TransparentFX

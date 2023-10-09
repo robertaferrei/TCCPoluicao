@@ -50,9 +50,18 @@ public class MovimentoHorizontal : MonoBehaviour
     public GameObject painelInformacao;
     public float velocidadeTiro;
 
+    public GameObject painePorcao;
+
+    public GameObject painelGameOver;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        painePorcao.SetActive(false);
+
+        painelGameOver.SetActive(false);
+
         rB = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         spRender = GetComponentInChildren<SpriteRenderer>();
@@ -200,6 +209,8 @@ public class MovimentoHorizontal : MonoBehaviour
 
             if (qntVida <= 0)
             {
+
+                painelGameOver.SetActive(true);
                 vida1.enabled = false;
                 vida2.enabled = false;
                 vida3.enabled = false;
@@ -228,8 +239,23 @@ public class MovimentoHorizontal : MonoBehaviour
         {
             Bandeira.SetActive(true);
             ativarTempo = true; 
-        }      
+        }
+
+
+        if (col.gameObject.tag == "coletarPorcao")
+        {
+            painePorcao.SetActive(true);
+          
+        }
+
+        if (col.gameObject.tag == "Morrer")
+        {
+           painelGameOver.SetActive(true);
+
+
+        }
     }
+
 
     public void fecharPainel()
     {

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7465449781803377358}
   - component: {fileID: 7465449781803377359}
   m_Layer: 0
-  m_Name: bandeiraInformativa (1)_12
+  m_Name: Bandeira Informativa
   m_TagString: informacoes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

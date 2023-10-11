@@ -7,57 +7,50 @@ using TMPro;
 
 public class MovimentoHorizontal : MonoBehaviour
 {
-    public float velocidade;
-    public float jumpForce;
-    public bool isJumping;
-    private Rigidbody2D rB;
-
-    public GameObject projetil;
-    public Transform posicaoProjetil;
-
-    private bool abaixar;
-    public Animator anim;
-    public float movimentoHorizontal, movimentoVertical;
-
-    public SpriteRenderer spRender;
-
-    public GameObject bullet;
-    const float lifeTime = 2;
-
-    public const float runningSpeed = 9, defaultSpeed = 6;
-    public float speed = defaultSpeed;
-  
-    public float alturaDoPulo;
-    public bool estaNoChao;
-    public Transform verrificadorDeChao;
-    public LayerMask layerDoChao;
-    public float raioDeVerificacao;
-
-    public Image vida1, vida2, vida3, vida4, vida5;
-
     public int qntVidaAtual, qntVida;
     public int coins;
+
+    public float velocidade;
+    public float jumpForce;
+    public float movimentoHorizontal, movimentoVertical;
+    public float speed = defaultSpeed;
+    public float alturaDoPulo;
+    public float raioDeVerificacao;
+    public float tempo;
+    public float forcaTiro;
+    public float velocidadeTiro;
+    public float forcaPulo;
+    const float lifeTime = 2;
+    public const float runningSpeed = 9, defaultSpeed = 6;
+
+    public bool isJumping;
+    public bool estaNoChao;
+    private bool abaixar;
+    private bool ativarTempo;
+
+    public GameObject projetil;
+    public GameObject bullet;
+    public GameObject Bandeira;
+    public GameObject posicaoTiro;
+    public GameObject painelInformacao;
+    public GameObject painePorcao;
+    public GameObject painelGameOver;
+    private Rigidbody2D rB;
+    public Transform posicaoProjetil;
+    public Transform verrificadorDeChao;
+    public Animator anim;
+    public SpriteRenderer spRender;
+    public Image vida1, vida2, vida3, vida4, vida5;
     public TextMeshProUGUI textoMoedas;
+    public TextMeshProUGUI timetext;
     private AudioSource sound;
     public AudioClip somMoeda, somPulo, atirar;
-    public TextMeshProUGUI timetext;
-    public float tempo;
-    public GameObject Bandeira;
     public Button fechar;
-    private bool ativarTempo;
-    public GameObject posicaoTiro;
-    public float forcaTiro;
-    public GameObject painelInformacao;
-    public float velocidadeTiro;
-
-    public GameObject painePorcao;
-
-    public GameObject painelGameOver;
+    public LayerMask layerDoChao;
 
     // Start is called before the first frame update
     void Start()
     {
-
         painePorcao.SetActive(false);
 
         painelGameOver.SetActive(false);
@@ -144,7 +137,6 @@ public class MovimentoHorizontal : MonoBehaviour
         }
         else if (speed != defaultSpeed)
         {
-
             speed = defaultSpeed;
         }
     }
@@ -153,7 +145,7 @@ public class MovimentoHorizontal : MonoBehaviour
     {
         if (estaNoChao == true)
         {
-            rB.velocity = Vector2.up * alturaDoPulo;
+            rB.AddForce(Vector2.up * forcaPulo);
             sound.PlayOneShot(somPulo);
         }
     }
@@ -241,21 +233,16 @@ public class MovimentoHorizontal : MonoBehaviour
             ativarTempo = true; 
         }
 
-
         if (col.gameObject.tag == "coletarPorcao")
         {
-            painePorcao.SetActive(true);
-          
+            painePorcao.SetActive(true);          
         }
 
         if (col.gameObject.tag == "Morrer")
         {
            painelGameOver.SetActive(true);
-
-
         }
     }
-
 
     public void fecharPainel()
     {

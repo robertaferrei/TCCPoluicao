@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class botoesIniciar : MonoBehaviour
 {
@@ -13,9 +14,12 @@ public class botoesIniciar : MonoBehaviour
 
     [SerializeField] private GameObject painelGameOver;
 
+    public GameObject volume;
 
 
+    public Slider slider;
 
+    public AudioSource audioSom;
 
     private void Start()
     {
@@ -24,9 +28,14 @@ public class botoesIniciar : MonoBehaviour
         painelInstrucoes.SetActive(false);
     }
 
+    private void Update()
+    {
+        audioSom.volume = slider.GetComponent<Slider>().value;
+    }
+
     public void jogar()
     {
-        SceneManager.LoadScene("CenaAtual");
+        SceneManager.LoadScene("MenuFases");
     }
 
     public void opcoes()
@@ -58,4 +67,5 @@ public class botoesIniciar : MonoBehaviour
     {
         Application.Quit();
     }
+
 }

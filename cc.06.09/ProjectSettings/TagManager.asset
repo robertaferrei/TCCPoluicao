@@ -20,6 +20,7 @@ TagManager:
   - ColetarIntes
   - Morrer
   - coletarPorcao
+  - "Ch\xE3o"
   layers:
   - Default
   - TransparentFX

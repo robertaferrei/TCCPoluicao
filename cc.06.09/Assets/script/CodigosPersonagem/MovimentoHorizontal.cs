@@ -43,8 +43,8 @@ public class MovimentoHorizontal : MonoBehaviour
     public Image vida1, vida2, vida3, vida4, vida5;
     public TextMeshProUGUI textoMoedas;
     public TextMeshProUGUI timetext;
-    private AudioSource sound;
-    public AudioClip somMoeda, somPulo, atirar;
+    private AudioSource playerAudio;
+    public AudioClip somMoeda, somPulo, atirar, somGameOver, somVitoria;
     public Button fechar;
     public LayerMask layerDoChao;
 
@@ -60,7 +60,7 @@ public class MovimentoHorizontal : MonoBehaviour
         spRender = GetComponentInChildren<SpriteRenderer>();
         qntVidaAtual = 5;
         qntVida = qntVidaAtual;
-        sound = GetComponent<AudioSource>();
+        playerAudio = GetComponent<AudioSource>();
         fechar.interactable = false;
     }
 
@@ -146,7 +146,7 @@ public class MovimentoHorizontal : MonoBehaviour
         if (estaNoChao == true)
         {
             rB.AddForce(Vector2.up * forcaPulo);
-            sound.PlayOneShot(somPulo);
+            playerAudio.PlayOneShot(somPulo);
         }
     }
 
@@ -203,6 +203,8 @@ public class MovimentoHorizontal : MonoBehaviour
             {
 
                 painelGameOver.SetActive(true);
+                playerAudio.Stop();
+                playerAudio.PlayOneShot(somGameOver);
                 vida1.enabled = false;
                 vida2.enabled = false;
                 vida3.enabled = false;
@@ -224,7 +226,7 @@ public class MovimentoHorizontal : MonoBehaviour
         {
             coins++;
             textoMoedas.text = coins.ToString();
-            sound.PlayOneShot(somMoeda);
+            playerAudio.PlayOneShot(somMoeda);
             Destroy(col.gameObject);
         }
         
@@ -236,12 +238,17 @@ public class MovimentoHorizontal : MonoBehaviour
 
         if (col.gameObject.tag == "coletarPorcao")
         {
-            painePorcao.SetActive(true);          
+            playerAudio.Stop();
+            playerAudio.PlayOneShot(somVitoria);
+            painePorcao.SetActive(true);   
+            
         }
 
         if (col.gameObject.tag == "Morrer")
         {
            painelGameOver.SetActive(true);
+           playerAudio.Stop();
+           playerAudio.PlayOneShot(somGameOver);
         }
     }
 

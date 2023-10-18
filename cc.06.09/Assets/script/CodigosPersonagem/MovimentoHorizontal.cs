@@ -154,7 +154,7 @@ public class MovimentoHorizontal : MonoBehaviour
     {
         tempo += Time.deltaTime;
         timetext.text = tempo.ToString("0");
-        textoMoedas.text = coins.ToString();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -223,6 +223,7 @@ public class MovimentoHorizontal : MonoBehaviour
         if (col.gameObject.tag == "coins")
         {
             coins++;
+            textoMoedas.text = coins.ToString();
             sound.PlayOneShot(somMoeda);
             Destroy(col.gameObject);
         }

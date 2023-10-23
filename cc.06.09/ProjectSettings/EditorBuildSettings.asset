@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu Principal.unity
     guid: 82c0f7c2ad57731488bb1cd378abafed
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/mapaFases.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/04.09tcc.unity
     guid: d1e6d0b60a357764ebac25f6233da03f
   - enabled: 1

@@ -30875,7 +30875,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -46.99994, y: -76}
+  m_AnchoredPosition: {x: -47.000122, y: -76}
   m_SizeDelta: {x: -486.937, y: -404.323}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1109336636345274580
@@ -31595,10 +31595,10 @@ RectTransform:
   m_Father: {fileID: 1109336636076612135}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -214, y: -303}
-  m_SizeDelta: {x: 270.06, y: 238.263}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -214, y: 401.907}
+  m_SizeDelta: {x: 270.06, y: 107.01999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1109336637010067801
 GameObject:
@@ -31646,11 +31646,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Com o passar dos anos, grandes corpora\xE7\xF5es e ind\xFAstrias come\xE7aram
-    a produzir em excesso, resultando em muito desperd\xEDcio. A fuma\xE7a das f\xE1bricas,
-    bem como o manuseio incorreto de itens e lixo despejado nos rios, criaram um
-    g\xE1s venenoso muito perigoso na atmosfera, transformando todo lixo sem vida
-    em lixo human\xF3ide visando dominar a cidade."
+  m_text: "Brasil \xE9 4\xBA no mundo em ranking de emiss\xE3o de gases poluentes
+    desde 1850. De 2020 para 2021, o total de CO2 equivalente que afetou os biomas
+    brasileiros passou de 1 bilh\xE3o para 1,19 bilh\xE3o de toneladas\_brutas."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -31685,7 +31683,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -32279,8 +32277,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.0317383, y: -1.4974976}
-  m_SizeDelta: {x: 36.286743, y: 105.8363}
+  m_AnchoredPosition: {x: -14.4279785, y: -4.809021}
+  m_SizeDelta: {x: 105.804, y: 67.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1584468373345358111
 PrefabInstance:
